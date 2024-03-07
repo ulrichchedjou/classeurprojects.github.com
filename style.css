@@ -1,0 +1,240 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: #001233;
+    color: #fff;
+    font-size: 1rem;
+}
+
+/*Prise en charge du menu ou conteneur principale*/
+
+main {
+    display: flex;
+    height: 100vh;
+}
+
+/*Mis en forme de la liste de projets*/
+aside {
+    border: 2px solid #FF595A;
+    border-radius: 6px;
+    margin: 5px;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    width: 25%;
+    height: auto;
+    transition: all .5s ease;
+}
+
+.logo img {
+    width: 100%;
+}
+
+nav > ul > a {
+    text-decoration: none;
+    list-style: none;
+    color: white;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+nav > ul > a > li:hover, nav ul a li:active{
+    background-color: #FF595A;
+    padding: 10px;
+    margin-left: 15px;
+    transition: .3s;
+}
+
+nav > ul > a > li {
+    border: 2px solid #FF595A;
+    border-radius: 6px;
+    padding: 8px;
+    margin: 5px auto;
+    text-align: center;
+}
+
+.kfk {
+    cursor: pointer;
+}
+
+/*Mise en forme de l'entête de la page*/
+.student_ID {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    border: 2px solid #FF595A;
+    font-size: 1.5rem;
+    width: auto;
+    border-radius: 6px;
+    padding: 5px;
+    margin: 5px;
+}
+.projectTitle{
+    display: flex;
+    gap: 5px;
+    align-items: baseline;
+}
+.projectTitle h1{
+    padding-left: 5px;
+}
+.photo {
+    display: flex;
+    align-items: center;
+}
+
+.myphoto {
+    border-radius: 50px;
+    height: 80px;
+    width: 80px;
+}
+.main {
+    width: 35%;
+    height: 35%;
+    border-radius: 50%;
+}
+
+.identify {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    letter-spacing: 1px;
+    font-size: 1.5rem;
+    height: 100%;
+    width: 100%;
+
+}
+
+.main_content {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border: 2px solid #FF595A;
+    margin: 5px;
+    border-radius: 6px;
+    height: 100%;
+
+}
+
+iframe {
+    display: none;
+    border: 1px solid #FF595A;
+    border-radius: 6px;
+    padding: 10px;
+    width: auto;
+    height: 100%;
+}
+
+.id {
+    text-align: center;
+    border-right: 2px solid #FF595A;
+    width: 50%;
+    padding: 50px;
+}
+
+.hamburger{
+    display: none;
+    padding: 5px;
+    cursor: pointer;
+}
+
+/*Mise en forme du pied de page ou footer*/
+p {
+    padding: 20px;
+}
+
+footer p {
+    margin: 5px;
+    border: 2px solid #FF595A;
+    text-align: center;
+    border-radius: 6px;
+    font-size: 1.5rem;
+}
+.bar{
+  display: block;
+  border-radius: 6px;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  background-color: white;
+}
+
+/*GERONS LE RESPONSIVE*/
+@media screen and (max-width: 1024px) {
+    .main_content{
+        margin-left: 5px;
+        margin-right: 5px;
+    }  
+    .hamburger{
+        display: block;
+    }
+
+    .hamburger.active .bar:nth-child(2){
+        opacity: 0;
+    }
+    .hamburger.active .bar:nth-child(1){
+        transform: translateY(8px) rotate(45deg);
+    }
+    .hamburger.active .bar:nth-child(3){
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    #sidebar.active{
+        left: 0;
+    } 
+    aside{
+        position: fixed;
+        left: -800px;
+        top: 70px;
+        gap: 0;
+        flex-direction: column;
+        background-color: #001233;
+        width: 50%;
+        height: 80vh;
+        text-align: center;
+        transition: 0.3s;
+    }
+    .main{
+        width: 100px;
+    }
+    .myphoto{
+        width: 50px;
+        height: 50px;
+    }
+    .photo{
+        display: flex;
+        padding: 0;
+        margin: 0;
+    }
+    .student_ID{
+        align-items: baseline;
+    }
+    .projectTitle h1, h3, footer p, p{
+        padding: 5px;
+        margin: 5px;
+        font-size: 15px;
+
+    }
+    iframe{
+        padding: 10px;
+    }
+    body, main{
+        font-size: 10px;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        height: 100vh;
+    }
+    .id, .detail_ID{
+        padding: 8px;
+    }
+    nav ul a li:active{
+        background-color: #FF595A;
+    }
+}
